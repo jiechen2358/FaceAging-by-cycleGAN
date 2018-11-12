@@ -39,13 +39,13 @@ We picked the [**CycleGAN**](https://junyanz.github.io/CycleGAN/) model because 
 
    python train.py --dataroot ./datasets/young2old --name aging_cyclegan --model cycle_gan
    
-   To view training results and loss plots, run python -m visdom.server and click the URL http://localhost:8097. To see more intermediate results, check out ./checkpoints/maps_cyclegan/web/index.html.
+   To view training results and loss plots, run python -m visdom.server and click the URL http://localhost:8097. To see more intermediate results, check out ./checkpoints/aging_cyclegan/web/index.html.
 
 3. Test the model:
 
    python test.py --dataroot ./datasets/young2old --name aging_cyclegan --model cycle_gan
 
-   The test results will be saved to a html file here: ./results/maps_cyclegan/latest_test/index.html.
+   The test results will be saved to a html file here: ./results/aging_cyclegan/latest_test/index.html.
 
 
 ## Notes
