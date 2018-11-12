@@ -18,3 +18,13 @@ We picked the [**CycleGAN**](https://junyanz.github.io/CycleGAN/) model because 
 ![Model Architecture](
         https://raw.githubusercontent.com/JunwenBu/ImageResources/master/CycelGANAgingModelArchitecture.png "Model Architecture"
       )
+
+## Training
+
+
+## Notes
+
+
+## References
+* CycleGAN paper [link](https://arxiv.org/abs/1703.10593)
+* Official source code pyTorch implementation [link](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) 
