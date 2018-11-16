@@ -28,7 +28,11 @@ We picked the [**CycleGAN**](https://junyanz.github.io/CycleGAN/) model because 
    
    cd FaceAging-by-cycleGAN
    
-2. For Conda users, we include a script ./scripts/conda_deps.sh to install PyTorch and other libraries.
+2. Install PyTorch 0.4+ and torchvision from http://pytorch.org and other dependencies (e.g., visdom and dominate). You can install all the dependencies by
+   
+   pip install -r requirements.txt
+   
+3. For Conda users, we include a script ./scripts/conda_deps.sh to install PyTorch and other libraries.
 
 ## Train/Test
 1. Unpack datasets:
