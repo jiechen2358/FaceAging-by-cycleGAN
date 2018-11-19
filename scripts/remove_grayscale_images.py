@@ -2,8 +2,10 @@
 # this script is to remove grayscale images in the datasets
 
 from datetime import datetime
+from PIL import Image
 from scipy.misc import imread, imsave, imresize
 import os
+import random
 
 def is_grey_scale_2(directory, f):
   count = 0
@@ -16,6 +18,21 @@ def is_grey_scale_2(directory, f):
         os.remove(path)
         print(path + ", gray scale image is deleted!")
         f.write(path + ", gray scale image is deleted!\n")
+      else:
+        im = Image.open(path).convert('RGB')
+        w,h = im.size
+        i = 0
+        for i in range(10):
+          x = random.randint(1, w - 1)
+          y = random.randint(1, h - 1)
+          r,g,b = im.getpixel((x,y))
+          if r != g != b:
+            break
+          if (i == 9):
+            count += 1
+            os.remove(path)
+            print(path + ", gray scale image is deleted!")
+            f.write(path + ", gray scale image is deleted!\n")
   return count
 
 def main():
