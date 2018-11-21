@@ -7,7 +7,6 @@ import os
 import shutil
 
 """
-Used to convert IMDb metadata in .mat format to .pickle format
 Utility class to process images downloaded from 
 https://drive.google.com/file/d/0B3zF40otoXI3OTR0Y0MtNnVhNFU/
 
