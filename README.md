@@ -51,6 +51,7 @@ We picked the [**CycleGAN**](https://junyanz.github.io/CycleGAN/) model because 
 
    The test results will be saved to a html file here: ./results/aging_cyclegan/latest_test/index.html.
 
+## Results
 
 ## Notes
 
