@@ -11,19 +11,21 @@ Data source: IMDB-WIKI – 500k+ face images with age and gender labels
 """
 
 from datetime import datetime, timedelta
-import numpy as np
-import scipy
 from scipy.io import loadmat
+import numpy as np
 import pandas as pd
+import scipy
+
 
 def matlab_datenum2dt(matlab_datenum):
     return datetime.fromordinal(int(matlab_datenum) - 366) +\
-            timedelta(days=int(matlab_datenum%1))
+        timedelta(days=int(matlab_datenum % 1))
+
 
 def main():
 
-    path_save = '/Users/yu/Dropbox/CS230_Project/Data_Processing/wiki.pkl'
-    path_mat = '/Users/yu/Dropbox/CS230_Project/Data_Processing/wiki.mat'
+    path_save = '/home/yu/Development/FaceAging-by-cycleGAN/datasets/young2old/wiki.pkl'
+    path_mat = '/home/yu/Development/FaceAging-by-cycleGAN/datasets/young2old/wiki.mat'
     mat = loadmat(path_mat)
 
     print(mat['__header__'])
