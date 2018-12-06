@@ -27,15 +27,15 @@ class BaseModel():
         self.model_names = []
         self.visual_names = []
         self.image_paths = []
-        self.GA_freeze_layer = opt.GA_freeze_layer
-        self.GB_freeze_layer = opt.GB_freeze_layer
-        self.DA_freeze_layer = opt.DA_freeze_layer
-        self.DB_freeze_layer = opt.DB_freeze_layer
+        self.G_A_freeze_layer = opt.G_A_freeze_layer
+        self.G_B_freeze_layer = opt.G_B_freeze_layer
+        self.D_A_freeze_layer = opt.D_A_freeze_layer
+        self.D_B_freeze_layer = opt.D_B_freeze_layer
         self.use_pretrained_model = opt.use_pretrained_model
-        self.pretrained_model_name = opt.preload_model_name
+        self.pretrained_model_name = opt.pretrained_model_name
         self.pretrained_model_subname = opt.pretrained_model_subname
-        self.pretrained_model_epoch = opt.preload_model_epoch
-        self.pretrained_save_dir = os.path.join(opt.checkpoints_dir, opt.preload_model_name)
+        self.pretrained_model_epoch = opt.pretrained_model_epoch
+        self.pretrained_save_dir = os.path.join(opt.checkpoints_dir, opt.pretrained_model_name)
 
     def set_input(self, input):
         self.input = input
@@ -50,8 +50,8 @@ class BaseModel():
 
         if not self.isTrain or opt.continue_train:
             self.load_networks(opt.epoch)
-        if self.isTrain or opt.use_pretrained_model：
-            self.load_pretrained_networks(opt.preload_model_epoch)
+        if self.isTrain or opt.use_pretrained_model:
+            self.load_pretrained_networks(opt.pretrained_model_epoch)
         self.print_networks(opt.verbose)
 
     # make models eval mode during test time
@@ -178,11 +178,15 @@ class BaseModel():
             if isinstance(name, str):
                 net = getattr(self, 'net' + name)
                 num_params = 0
+                num_params_trainable = 0
                 for param in net.parameters():
                     num_params += param.numel()
+                    if param.requires_grad:
+                        num_params_trainable += param.numel()
                 if verbose:
                     print(net)
                 print('[Network %s] Total number of parameters : %.3f M' % (name, num_params / 1e6))
+                print('[Network %s] Total number of trainable parameters : %.3f M' % (name, num_params_trainable / 1e6))
         print('-----------------------------------------------')
 
     # set requies_grad=Fasle to avoid computation
