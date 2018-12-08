@@ -7,7 +7,7 @@ import os
 import shutil
 
 """
-Utility class to process images downloaded from 
+Utility class to process images downloaded from
 https://drive.google.com/file/d/0B3zF40otoXI3OTR0Y0MtNnVhNFU/
 
 Data source: Cross-Age Celebrity Dataset (CACD)
