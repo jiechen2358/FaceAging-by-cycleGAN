@@ -16,9 +16,11 @@ import scipy
 from scipy.io import loadmat
 import pandas as pd
 
+
 def matlab_datenum2dt(matlab_datenum):
     matlab_datenum = matlab_datenum if matlab_datenum > 700000 else 700000
-    return datetime.fromordinal(int(matlab_datenum) - 366) + timedelta(days=int(matlab_datenum%1))
+    return datetime.fromordinal(int(matlab_datenum) - 366) + timedelta(days=int(matlab_datenum % 1))
+
 
 def main():
 
@@ -60,7 +62,7 @@ def main():
 
     # Calc ages when photo taken
     df_values['photo_taken_age'] = df_values.apply(lambda x: x['photo_taken'] - x['dob'].year, axis=1)
-        
+
     # Concat all together and save
     # Do not use csv format to work around tuple to be string
     df_values.to_pickle(path_save)
