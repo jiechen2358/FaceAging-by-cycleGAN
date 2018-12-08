@@ -27,6 +27,15 @@ class BaseModel():
         self.model_names = []
         self.visual_names = []
         self.image_paths = []
+        self.G_A_freeze_layer = opt.G_A_freeze_layer
+        self.G_B_freeze_layer = opt.G_B_freeze_layer
+        self.D_A_freeze_layer = opt.D_A_freeze_layer
+        self.D_B_freeze_layer = opt.D_B_freeze_layer
+        self.use_pretrained_model = opt.use_pretrained_model
+        self.pretrained_model_name = opt.pretrained_model_name
+        self.pretrained_model_subname = opt.pretrained_model_subname
+        self.pretrained_model_epoch = opt.pretrained_model_epoch
+        self.pretrained_save_dir = os.path.join(opt.checkpoints_dir, opt.pretrained_model_name)
 
     def set_input(self, input):
         self.input = input
@@ -41,6 +50,8 @@ class BaseModel():
 
         if not self.isTrain or opt.continue_train:
             self.load_networks(opt.epoch)
+        if self.isTrain or opt.use_pretrained_model:
+            self.load_pretrained_networks(opt.pretrained_model_epoch)
         self.print_networks(opt.verbose)
 
     # make models eval mode during test time
@@ -135,6 +146,31 @@ class BaseModel():
                     self.__patch_instance_norm_state_dict(state_dict, net, key.split('.'))
                 net.load_state_dict(state_dict)
 
+    # load models from the disk
+    def load_pretrained_networks(self, epoch):
+        for name in self.pretrained_model_subname.split(','):
+            if isinstance(name, str):
+                load_filename = '%s_net_%s.pth' % (epoch, name)
+                load_path = os.path.join(
+                    self.pretrained_save_dir, load_filename)
+                net = getattr(self, 'net' + name)
+                if isinstance(net, torch.nn.DataParallel):
+                    net = net.module
+                print('loading the model from %s' % load_path)
+                # if you are using PyTorch newer than 0.4 (e.g., built from
+                # GitHub source), you can remove str() on self.device
+                state_dict = torch.load(
+                    load_path, map_location=str(self.device))
+                if hasattr(state_dict, '_metadata'):
+                    del state_dict._metadata
+
+                # patch InstanceNorm checkpoints prior to 0.4
+                # need to copy keys here because we mutate in loop
+                for key in list(state_dict.keys()):
+                    self.__patch_instance_norm_state_dict(
+                        state_dict, net, key.split('.'))
+                net.load_state_dict(state_dict)
+
     # print network information
     def print_networks(self, verbose):
         print('---------- Networks initialized -------------')
@@ -142,11 +178,15 @@ class BaseModel():
             if isinstance(name, str):
                 net = getattr(self, 'net' + name)
                 num_params = 0
+                num_params_trainable = 0
                 for param in net.parameters():
                     num_params += param.numel()
+                    if param.requires_grad:
+                        num_params_trainable += param.numel()
                 if verbose:
                     print(net)
                 print('[Network %s] Total number of parameters : %.3f M' % (name, num_params / 1e6))
+                print('[Network %s] Total number of trainable parameters : %.3f M' % (name, num_params_trainable / 1e6))
         print('-----------------------------------------------')
 
     # set requies_grad=Fasle to avoid computation
