@@ -15,5 +15,15 @@ class TestOptions(BaseOptions):
         parser.set_defaults(model='test')
         # To avoid cropping, the loadSize should be the same as fineSize
         parser.set_defaults(loadSize=parser.get_default('fineSize'))
+
+        parser.add_argument('--use_pretrained_model', action='store_true', help='whether we should use pretrained model')
+        parser.add_argument('--pretrained_model_name', type=str, default='', help='name of the pretrained model we want to use for transfer learning, e.g. orange2apple')
+        parser.add_argument('--pretrained_model_subname', type=str, default='', help='name of the sub models (comma delimited) we want to use for transfer learning, e.g. GA,GB')
+        parser.add_argument('--pretrained_model_epoch', type=int, default=1, help='epoch of the pretrained model we want to use for transfer learning')
+        parser.add_argument('--G_A_freeze_layer', type=int, default=0, help='freeze these many initial layers (inclusive) of G_A network during training')
+        parser.add_argument('--G_B_freeze_layer', type=int, default=0, help='freeze these many initial layers (inclusive) of G_B network during training')
+        parser.add_argument('--D_A_freeze_layer', type=int, default=0, help='freeze these many initial layers (inclusive) of D_A network during training')
+        parser.add_argument('--D_B_freeze_layer', type=int, default=0, help='freeze these many initial layers (inclusive) of D_B network during training')
+
         self.isTrain = False
         return parser
