@@ -23,11 +23,11 @@ def groupAge(src):
             elif file_name.startswith('4'):
                 dest = os.path.join(src, '40')
             elif file_name.startswith('5'):
-                dest = os.path.join(src, '50')
+                dest = os.path.join(src, '50+')
             elif file_name.startswith('6'):
-                dest = os.path.join(src, '60')
+                dest = os.path.join(src, '50+')
             else:
-                dest = os.path.join(src, '60+')
+                dest = os.path.join(src, '50+')
             if not os.path.exists(dest):
                 os.mkdir(dest)
             shutil.move(full_file_name, dest)
@@ -59,14 +59,30 @@ def randomChooseFile(train_raw_dst, train_out_dst, test_raw_dst, test_out_dst, s
     # resizeImage(test_raw_dst, test_out_dst, [200, 200])
 
 
-def main():
-    # groupAge(ALL_IMAGES_PATH)
-    getImages()
+def parseFilename(filename):
+    parts = filename.split('_')
+    age = int(parts[0])
+    name = '_'.join(parts[1:-1])
+    return age, name
+
+
+def getGroupNameDifference(ageGroupA, ageGroupB):
+    srcA = os.path.join(ALL_IMAGES_PATH, ageGroupA)
+    srcB = os.path.join(ALL_IMAGES_PATH, ageGroupB)
+    peopleA = set()
+    peopleB = set()
+    for file in os.listdir(srcA):
+        age, name = parseFilename(file)
+        peopleA.add(name)
+    for file in os.listdir(srcB):
+        age, name = parseFilename(file)
+        peopleB.add(name)
+    print(peopleA & peopleB)
 
 
 def getImages():
     srcA = os.path.join(ALL_IMAGES_PATH, '20')
-    srcB = os.path.join(ALL_IMAGES_PATH, '60')
+    srcB = os.path.join(ALL_IMAGES_PATH, '50+')
 
     trainA_raw = os.path.join(PROCESS_PATH, 'trainA_raw')
     trainA = os.path.join(PROCESS_PATH, 'trainA')
@@ -87,6 +103,12 @@ def getImages():
     os.mkdir(testB_raw)
     os.mkdir(testB)
     randomChooseFile(trainB_raw, trainB, testB_raw, testB, srcB, 2500)
+
+
+def main():
+    # groupAge(ALL_IMAGES_PATH)
+    # getGroupNameDifference('20', '50+')
+    # getImages()cle
 
 
 if __name__ == '__main__':
