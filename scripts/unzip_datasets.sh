@@ -18,8 +18,11 @@ mv datasets/young2old/trainA_women/* datasets/young2old/trainA/
 mv datasets/young2old/trainB_women/* datasets/young2old/trainB/
 mv datasets/young2old/testA_women/* datasets/young2old/testA/
 mv datasets/young2old/testB_women/* datasets/young2old/testB/
-rm datasets/young2old/*.tar.gz
-rm -r datasets/young2old/trainA_*
-rm -r datasets/young2old/trainB_*
-rm -r datasets/young2old/testA_*
-rm -r datasets/young2old/testB_*
+rm -r datasets/young2old/trainA_men
+rm -r datasets/young2old/trainB_men
+rm -r datasets/young2old/testA_men
+rm -r datasets/young2old/testB_men
+rm -r datasets/young2old/trainA_women
+rm -r datasets/young2old/trainB_women
+rm -r datasets/young2old/testA_women
+rm -r datasets/young2old/testB_women
