@@ -1,3 +1,7 @@
+rm -r datasets/young2old/trainA
+rm -r datasets/young2old/trainB
+rm -r datasets/young2old/testA
+rm -r datasets/young2old/testB
 tar zxvf datasets/young2old/trainA_men.tar.gz -C datasets/young2old/
 tar zxvf datasets/young2old/trainB_men.tar.gz -C datasets/young2old/
 tar zxvf datasets/young2old/testA_men.tar.gz -C datasets/young2old/
