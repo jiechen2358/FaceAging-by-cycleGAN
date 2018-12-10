@@ -50,7 +50,7 @@ class BaseModel():
 
         if not self.isTrain or opt.continue_train:
             self.load_networks(opt.epoch)
-        if self.isTrain or opt.use_pretrained_model:
+        if self.isTrain and opt.use_pretrained_model:
             self.load_pretrained_networks(opt.pretrained_model_epoch)
         self.print_networks(opt.verbose)
 
