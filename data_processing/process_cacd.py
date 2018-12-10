@@ -108,7 +108,7 @@ def getImages():
 def main():
     # groupAge(ALL_IMAGES_PATH)
     # getGroupNameDifference('20', '50+')
-    # getImages()cle
+    # getImages()
 
 
 if __name__ == '__main__':
