@@ -75,6 +75,7 @@ By defalut, it use Adam optimizer, can switch to SGD by using '-sgd'.
 ## Notes
    * For Age Classification, actually, there is some overfittin. For this very first version, it if fine. Will keep working on the project and keep improving it.
    * For Gender, only trained on young male and female.
+   * This classifier a very early verion project. The code structure will be improved. More functions and comments will be added.
 
 ## References
 
