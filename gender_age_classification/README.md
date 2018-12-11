@@ -13,6 +13,7 @@ The dataset for training this model is pretty small, feel free to add more data 
 * Arround 100 images for test
 
 For age classification, data locates in folder: age-data
+
 For gender classification, data locates in folder: gender-data
 * train folder includes data for training
 * test folder includes data for testing
@@ -73,9 +74,9 @@ By defalut, it use Adam optimizer, can switch to SGD by using '-sgd'.
    * age classiferier accuracy > 90%
    
 ## Notes
-   * For Age Classification, actually, there is some overfittin. For this very first version, it if fine. Will keep working on the project and keep improving it.
+   * For Age Classification, actually, there is some overfitting. For this very first version, it if fine. Will keep working on the project and keep improving the model and tune the hyper-parameters.
    * For Gender, only trained on young male and female.
-   * This classifier a very early verion project. The code structure will be improved. More functions and comments will be added.
+   * This classifier is in its "early verion" state. The code structure will be improved. More functions and comments will be added.
 
 ## References
 
