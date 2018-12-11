@@ -42,7 +42,7 @@ The difference is instead of 2 fc layers, it add one more fc layer: (384x6x6, 51
 
        python gender_age_classifier.py -a
    
-By default, the batch_size is 64, number of epoch is 64, can modify those values by using '-b' and '-ep'.
+By default, the batch_size is 64, number of epoch is 100, can modify those values by using '-b' and '-ep'.
 
 By defalut, it use Adam optimizer, can switch to SGD by using '-sgd'.
 
