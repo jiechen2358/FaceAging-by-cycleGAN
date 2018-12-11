@@ -78,6 +78,6 @@ By defalut, it use Adam optimizer, can switch to SGD by using '-sgd'.
 
 ## References
 
-Paper[CVPR2015_CNN_AgeGenderEstimation](https://talhassner.github.io/home/projects/cnn_agegender/CVPR2015_CNN_AgeGenderEstimation.pdf).
+Paper [CVPR2015_CNN_AgeGenderEstimation](https://talhassner.github.io/home/projects/cnn_agegender/CVPR2015_CNN_AgeGenderEstimation.pdf).
 
 Pytorch tutorials [Classifier](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py)
