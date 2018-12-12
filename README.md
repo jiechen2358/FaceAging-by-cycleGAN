@@ -22,30 +22,29 @@ We picked the [**CycleGAN**](https://junyanz.github.io/CycleGAN/) model because 
 ## Installation
 1. Clone this repo
 
-   git clone https://github.com/jiechen2358/FaceAging-by-cycleGAN.git
-   
-   cd FaceAging-by-cycleGAN
+       git clone https://github.com/jiechen2358/FaceAging-by-cycleGAN.git
+       cd FaceAging-by-cycleGAN
    
 2. Install PyTorch 0.4+ and torchvision from http://pytorch.org and other dependencies (e.g., visdom and dominate). You can install all the dependencies by
    
-   pip install -r requirements.txt
+       pip install -r requirements.txt
    
 3. For Conda users, we include a script ./scripts/conda_deps.sh to install PyTorch and other libraries.
 
 ## Train/Test
 1. Unpack datasets:
 
-   ./scripts/unzip_datasets.sh
+       ./scripts/unzip_datasets.sh
    
 2. Train a model: 
 
-   python train.py --dataroot ./datasets/young2old --name aging_cyclegan --model cycle_gan
+       python train.py --dataroot ./datasets/young2old --name aging_cyclegan --model cycle_gan
    
    To view training results and loss plots, run python -m visdom.server and click the URL http://localhost:8097. To see more intermediate results, check out ./checkpoints/aging_cyclegan/web/index.html.
 
 3. Test the model:
 
-   python test.py --dataroot ./datasets/young2old --name aging_cyclegan --model cycle_gan
+       python test.py --dataroot ./datasets/young2old --name aging_cyclegan --model cycle_gan
 
    The test results will be saved to a html file here: ./results/aging_cyclegan/latest_test/index.html.
 
