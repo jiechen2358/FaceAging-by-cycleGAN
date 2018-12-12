@@ -23,7 +23,7 @@ All the raw images are downloaded from [**IMDB-WIKI-500k+ face images with age a
 
 ## Modeling and Implementation
 The network model is similar with the description in this [paper](https://talhassner.github.io/home/projects/cnn_agegender/CVPR2015_CNN_AgeGenderEstimation.pdf).
-The difference is instead of 2 fc layers, it add one more fc layer: (384x6x6, 512)
+Also see references.
 
 ## Installation
 1. Clone this repo
