@@ -71,7 +71,7 @@ By defalut, it use Adam optimizer, can switch to SGD by using '-sgd'.
    
    For the attached dataset:
    * gender classifier accuracy > 95%
-   * age classiferier accuracy > 90%
+   * age classifier accuracy > 90%
    
 ## Notes
    * For Age Classification, actually, there is some overfitting. For this very first version, it if fine. Will keep working on the project and keep improving the model and tune the hyper-parameters.
