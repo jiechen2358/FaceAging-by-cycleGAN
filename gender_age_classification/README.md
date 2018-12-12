@@ -33,7 +33,7 @@ The difference is instead of 2 fc layers, it add one more fc layer: (384x6x6, 51
    
 2. Installation requirments should be the same as the mother project - "FaceAging-by-cycleGAN"
 
-## Train/Test  
+## Train
 1. Train a model for gender classification:
 
        python gender_age_classifier.py 
@@ -46,15 +46,19 @@ By default, the batch_size is 64, number of epoch is 100, can modify those value
 
 By defalut, it use Adam optimizer, can switch to SGD by using '-sgd'.
 
-3. Checkpints and figures
+## Checkpoints and figures
 
-   Checkpoints and loss, performance figures for gender classifier are generated and saved in folder: checkpoints/gender
+   During training:
    
-   Checkpoints and loss, performance figures for age classifer are genderated and saved in folder: checkpoints/age
+   Checkpoints and loss, performance figures for gender classifier will be generated and saved in folder: checkpoints/gender
+   
+   Checkpoints and loss, performance figures for age classifer will be generated and saved in folder: checkpoints/age
 
    The checkpoint with best validation accuracy will be copied as model_best.tar.
 
 4. Predict
+
+   It picks model_best.tar and load the model.
 
    For Gender, put images of male and female in folder gender-data/predict/someFolderName, run:
    
@@ -69,14 +73,14 @@ By defalut, it use Adam optimizer, can switch to SGD by using '-sgd'.
 
    Depends on your datasets.
    
-   For the attached dataset:
+   For attached dataset:
    * gender classifier accuracy > 95%
    * age classifier accuracy > 90%
    
 ## Notes
-   * For Age Classification, actually, there is some overfitting. For this very first version, it if fine. Will keep working on the project and keep improving the model and tune the hyper-parameters.
-   * For Gender, only trained on young male and female.
-   * This classifier is in its "early verion" state. The code structure will be improved. More functions and comments will be added.
+   * For Age classification, actually, there is some overfitting. For this very first version, it is fine. We will keep working on the project and keep improving the model and tune the hyper-parameters.
+   * For Gender classifier, only trained on young male and female.
+   * This classifier is in its "early verion" state. The code structure will be improved. More functions, options and comments will be added.
 
 ## References
 
