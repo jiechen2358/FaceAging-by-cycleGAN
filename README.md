@@ -15,9 +15,7 @@ We picked the [**CycleGAN**](https://junyanz.github.io/CycleGAN/) model because 
 
 2. Obtain photos of one person that were taken at different ages is challenging and expensive. Therefore, we need an algorithm that can pass around domain knowledges between groups without paired input-output examples. CycleGAN can capture characteristics of faces of young people portraited in one image collection and figure out how these characteristics can be applied to those facial images in a collection of old people.
 
-![Model Architecture](
-        https://raw.githubusercontent.com/JunwenBu/ImageResources/master/CycelGANAgingModelArchitecture.png "Model Architecture"
-      )
+![Model Architecture](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/CycelGANAgingModelArchitecture.png)
 
 # Getting Started
 
