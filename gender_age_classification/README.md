@@ -8,8 +8,8 @@ Implement a simple "Gender and Age Classifier" in Pytorch. For the moment the Ag
 ## Dataset
 The dataset for training this model is pretty small, feel free to add more data if you plan to have a try.
 
-* For Gender, 500 female images, 500 male images for train.
-* For Age, 543 young images, 515 old images for train.
+* For Gender, 500 female images, 500 male images for train
+* For Age, 543 young images, 515 old images for train
 * Arround 100 images for test
 
 For age classification, data locates in folder: age-data
@@ -56,7 +56,7 @@ By defalut, it use Adam optimizer, can switch to SGD by using '-sgd'.
 
    The checkpoint with best validation accuracy will be copied as model_best.tar.
 
-4. Predict
+## Predict
 
    It picks model_best.tar and load the model.
 
