@@ -49,6 +49,15 @@ We picked the [**CycleGAN**](https://junyanz.github.io/CycleGAN/) model because 
    The test results will be saved to a html file here: ./results/aging_cyclegan/latest_test/index.html.
 
 ## Results
+### Good Results
+Young to Old
+
+![male young to old 1](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/m-result1.gif)
+![male young to old 2](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/m-result3.gif)
+
+Old to Young
+
+![male old to young 1](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/m-result2.gif)
 
 ## Notes
 
