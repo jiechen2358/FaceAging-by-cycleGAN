@@ -58,7 +58,7 @@ Young to Old
 Old to Young
 
 ![male old to young 1](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/m-result2.gif)
-## Input                                      Output                                   reconstruction 
+          Input                                      Output                                   reconstruction 
 ![Input output reconstruction](https://github.com/jiechen2358/FaceAging-by-cycleGAN/blob/master/imgs/Picture1.png)
 
 ## Notes
