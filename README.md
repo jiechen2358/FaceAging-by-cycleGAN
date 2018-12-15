@@ -1,4 +1,4 @@
-# FaceAging-by-cycleGAN
+## FaceAging-by-cycleGAN
 <span style="color:orange">This porject is still under construction... we will add more details in the progress.</span>
 ## Introduction
 In this project, we proposed a simple, yet intuitive deep learning model based on CycleGAN [11] that can generate predictive images of faces after 30 years from the time it was taken, using a dataset with little requirements attached.
@@ -58,6 +58,9 @@ Young to Old
 Old to Young
 
 ![male old to young 1](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/m-result2.gif)
+
+                 Input                             Output                         reconstruction 
+![Input output reconstruction](https://github.com/jiechen2358/FaceAging-by-cycleGAN/blob/master/imgs/Picture1.png)
 
 ## Notes
 
