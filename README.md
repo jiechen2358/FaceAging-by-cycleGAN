@@ -1,7 +1,7 @@
-## FaceAging-by-cycleGAN
-<span style="color:orange">This porject is still under construction... we will add more details in the progress.</span>
+# FaceAging-by-cycleGAN
+
 ## Introduction
-In this project, we proposed a simple, yet intuitive deep learning model based on CycleGAN [11] that can generate predictive images of faces after 30 years from the time it was taken, using a dataset with little requirements attached.
+In this project, we proposed a simple, yet intuitive deep learning model based on CycleGAN [11] that can generate predictive images of people's look after certain years based on their current images, without the need of paired dataset.
 
 ## Dataset
 1. [**IMDB-WIKI-500k+ face images with age and gender labels**](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) - contains 500k+ images of celebrities from IMDb and Wikipedia. The metadata of this dataset contains the date of birth of the person portrayed in the image and the date of which the image was taken.
