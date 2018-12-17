@@ -48,9 +48,28 @@ We picked the [**CycleGAN**](https://junyanz.github.io/CycleGAN/) model because 
 
    The test results will be saved to a html file here: ./results/aging_cyclegan/latest_test/index.html.
 
+## Contribution
+The code related to data processing is located in folder [**data_processing**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/data_processing), the folder contains utilities perform following  tasks
+* image format validation
+* remove grayscale images
+* remove small size images
+* process metadata of raw IMDB and CACD datasets.
+* Logging
+
+Added a script print_structure.py to print the network architecture based on the user selections.
+
+The trained models are located in folder [**trained_model**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/models), including:
+* wiki_all_female - checkpoints trained on female only datasets
+* wiki_all_male - checkpoints trained on male only datasets
+* wiki_mix_male_female - checkpoints trained on whole dataset with images of male and female combined.
+
+Added options to perform transfer learning and fine-tuning. Those files are located in folder: options.
+
+Implemented a [**Gender & Age Classifier**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/gender_age_classification) intent to perform multiple tasks.
+* From application perspective, we plan to develope a model selection in the future since our experiments show that the results of our model are influenced by the gender of the input images. For example, model trained on female has better performance on female image inputs.
+
 ## Results
-### Good Results
-                 Young to Old                      Old to Young
+              Young to Old                      Old to Young
 ![male young to old 1](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/m-result1.gif)
 ![male old to young 1](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/m-result2.gif)
 
