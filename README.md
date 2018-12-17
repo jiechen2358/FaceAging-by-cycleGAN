@@ -58,6 +58,8 @@ The code related to data processing is located in folder [**data_processing**](h
 
 Added a script print_structure.py to print the network architecture based on the user selections.
 
+Modified original model implementation to add layer freeze functionality ([**models**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/models)).
+
 The trained models are located in folder [**trained_model**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/models), including:
 * wiki_all_female - checkpoints trained on female only datasets
 * wiki_all_male - checkpoints trained on male only datasets
