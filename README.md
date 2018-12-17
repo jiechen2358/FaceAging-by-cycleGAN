@@ -60,10 +60,14 @@ The trained models are located in folder [**trained_model**](https://github.com/
 * 8_wiki_fine_tune_horse2zebra - checkpoints trained on IMDB-WIKI datasets, fine tuning with horse2zebra further trained 100 epochs
 * 9_wiki_fine_tune_male - checkpoints trained on IMDB-WIKI datasets, fine tuning with 3_wiki_base_male further trained 100 epochs
 
-### Supplementary classifier
+### Supplementary Classifier
 
 Implemented a [**Gender & Age Classifier**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/gender_age_classification) intent to perform multiple tasks.
 * From application perspective, we plan to develope a model selector in the future since our experiments show that the results of our model are influenced by the gender of the input images. For example, model trained on female has better performance on female image inputs.
+
+### Quantitative Assessment
+
+[**Age Estimation Tool**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/quantitative_assessment) Created some small utility code that can quantitatively estimate CycleGAN's performance by estimating the age of all the people in the test set, before and after the age progression. This allow us to quantitatively see how much our model has made people become.
 
 ## Introduction
 In this project, we proposed a simple, yet intuitive deep learning model based on **CycleGAN** that can generate predictive images of people's look after certain years based on their current images, without the need of paired dataset.
