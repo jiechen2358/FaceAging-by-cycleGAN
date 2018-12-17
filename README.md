@@ -60,9 +60,9 @@ Added a script print_structure.py to print the network architecture based on the
 
 Modified original model implementation to add layer freeze functionality ([**models**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/models)).
 
-The trained models are located in folder [**trained_model**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/models), including:
-* wiki_all_female - checkpoints trained on female only datasets
-* wiki_all_male - checkpoints trained on male only datasets
+The trained models are located in folder [**trained_model**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/trained_model), including:
+* wiki_all_female - checkpoints trained on female-only datasets
+* wiki_all_male - checkpoints trained on male-only datasets
 * wiki_mix_male_female - checkpoints trained on whole dataset with images of male and female combined.
 
 Added options to perform transfer learning and fine-tuning. Those files are located in folder: [**options**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/options).
