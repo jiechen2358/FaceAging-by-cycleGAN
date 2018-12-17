@@ -1,0 +1,47 @@
+----------------- Options ---------------
+         D_A_freeze_layer: 0                             
+         D_B_freeze_layer: 0                             
+         G_A_freeze_layer: 0                             
+         G_B_freeze_layer: 0                             
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./checkpoints                 
+                 dataroot: ./datasets/young2old          	[default: None]
+             dataset_mode: unaligned                     
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                 fineSize: 256                           
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                 loadSize: 256                           
+         max_dataset_size: inf                           
+                    model: cycle_gan                     	[default: test]
+               n_layers_D: 3                             
+                     name: young2old_transfer            	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          
+                  no_flip: False                         
+                     norm: instance                      
+                    ntest: inf                           
+                 num_test: 250                           	[default: 50]
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+   pretrained_model_epoch: 1                             
+    pretrained_model_name:                               
+ pretrained_model_subname:                               
+           resize_or_crop: resize_and_crop               
+              results_dir: ./results/                    
+           serial_batches: False                         
+                   suffix:                               
+     use_pretrained_model: False                         
+                  verbose: False                         
+----------------- End -------------------
