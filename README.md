@@ -75,9 +75,10 @@ The following table lists all models we have explored in our study and their qua
 
 ![Model Comparison: Transfer Learning, Fine Tuning](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/table-of-experiment-results.PNG)
 
-              Young to Old                      Old to Young
+              Young to Old                     Old to Young                     Old to Young
 ![male young to old 1](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/m-result1.gif)
 ![male old to young 1](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/m-result2.gif)
+![female old to young 1](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/f-result.gif)
 
                  Input                             Output                         reconstruction 
 ![Input output reconstruction](https://github.com/jiechen2358/FaceAging-by-cycleGAN/blob/master/imgs/Picture1.png)
