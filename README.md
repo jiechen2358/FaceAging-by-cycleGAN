@@ -5,7 +5,7 @@ In this project, we proposed a simple, yet intuitive deep learning model based o
 
 ## Dataset
 1. [**IMDB-WIKI-500k+ face images with age and gender labels**](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) - contains 500k+ images of celebrities from IMDb and Wikipedia. The metadata of this dataset contains the date of birth of the person portrayed in the image and the date of which the image was taken.
-2. [**CelebFaces Atributes (CeleA)**](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) - contains 200k+ images of celebrities from IMDb. The metadata of it contains an attribute called “young”, and there are 46k+ images has the value “-1” for this attribute.
+2. [**Cross-Age Celebrity Dataset (CACD)**](http://bcsiriuschen.github.io/CARC/) - contains 163k+ images of 2,000 celebrities. "The images are collected from search engines using celebrity name and year (2004-2013) as keywords. We can therefore estimate the ages of the celebrities on the images by simply subtract the birth year from the year of which the photo was taken."
 
 ## Modeling and Implementation
 We picked the [**CycleGAN**](https://junyanz.github.io/CycleGAN/) model because we think it can solve two major problems we face:  
@@ -69,6 +69,10 @@ Implemented a [**Gender & Age Classifier**](https://github.com/jiechen2358/FaceA
 * From application perspective, we plan to develope a model selection in the future since our experiments show that the results of our model are influenced by the gender of the input images. For example, model trained on female has better performance on female image inputs.
 
 ## Results
+The following table lists all models we have explored in our study and their quantitative result. The columns are (from left to right): model number, data source, data composition, number of epochs trained, pre-trained network to initialize with, freeze until what layer of generator net, the size of the generator net, maximum age progression (years), average age progression, last 3 columns are the % of test cases where age progression is over 10 years, 15 years and 20 years. Results in model #4 is N/A due to model collapsing.
+
+![Model Comparison: Transfer Learning, Fine Tuning](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/table-of-experiment-results.PNG)
+
               Young to Old                      Old to Young
 ![male young to old 1](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/m-result1.gif)
 ![male old to young 1](https://raw.githubusercontent.com/jiechen2358/FaceAging-by-cycleGAN/master/imgs/m-result2.gif)
