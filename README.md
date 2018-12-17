@@ -68,7 +68,7 @@ The trained models are located in folder [**trained_model**](https://github.com/
 Added options to perform transfer learning and fine-tuning. Those files are located in folder: [**options**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/options).
 
 Implemented a [**Gender & Age Classifier**](https://github.com/jiechen2358/FaceAging-by-cycleGAN/tree/master/gender_age_classification) intent to perform multiple tasks.
-* From application perspective, we plan to develope a model selection in the future since our experiments show that the results of our model are influenced by the gender of the input images. For example, model trained on female has better performance on female image inputs.
+* From application perspective, we plan to develope a model selector in the future since our experiments show that the results of our model are influenced by the gender of the input images. For example, model trained on female has better performance on female image inputs.
 
 ## Results
 The following table lists all models we have explored in our study and their quantitative result. The columns are (from left to right): model number, data source, data composition, number of epochs trained, pre-trained network to initialize with, freeze until what layer of generator net, the size of the generator net, maximum age progression (years), average age progression, last 3 columns are the % of test cases where age progression is over 10 years, 15 years and 20 years. Results in model #4 is N/A due to model collapsing.
