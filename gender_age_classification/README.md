@@ -57,7 +57,11 @@ By defalut, it use Adam optimizer, can switch to SGD by using '-sgd'.
    The checkpoint with best validation accuracy will be copied as model_best.tar.
 
 ## Predict
-
+   Please note: this is NOT a folder to test model performance, the purpose is to run it from application perspective (input an image and the model can predict).
+   
+   * There is no shuffle. A better approach will be implemented. Actually in Pytorch, it will label all the files in the first folder as the first label (in our case, female or old).
+   * If you'd like to test the performance of the model. Images different from train/test folder should be used. The uploaded images are only some samples to test the predict script.
+   
    It picks model_best.tar and load the model.
 
    For Gender, put images of male and female in folder gender-data/predict/someFolderName, run:
