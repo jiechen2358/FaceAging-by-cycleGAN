@@ -3,7 +3,7 @@ This project was graded **101/100** by cs230(fall semester 2018) of Stanford Uni
 
 ## Contribution
 
-This repo is heavily based on [**Original CycleGAN implementation**](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix). Most of our work involves adding code to better handle the dataset we are working with, and adding a couple small features that enables transfer learning.
+This repo is heavily based on [**Original CycleGAN implementation**](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix). Most of our work involves adding code to better handle the dataset we are working with, and adding a couple of small features that enables transfer learning.
 
 ### Data Process Related
 
